@@ -1,0 +1,17 @@
+import yagmail
+
+# Email configuration
+sender_email = "your_email@example.com"
+receiver_email = "recipient_email@example.com"
+subject = "Test Email"
+body = "This is an automated email sent from Python script."
+
+# Set up the yagmail client
+yag = yagmail.SMTP('your_email@example.com', 'your_email_password')
+
+# Send the email
+try:
+    yag.send(to=receiver_email, subject=subject, contents=body)
+    print("Email sent successfully!")
+except Exception as e:
+    print(f"Error: {e}")
